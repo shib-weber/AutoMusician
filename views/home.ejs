@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= Lyrics.title %> by <%= Lyrics.artist %></title>
+    <style>
+        .chord-line { font-weight: bold; color: red; }
+        .lyric-line { white-space: pre; } /* Preserve spaces */
+    </style>
+</head>
+<body>
+    <h1><%= Lyrics.title %> - <%= Lyrics.artist %></h1>
+    <div id="lyrics">
+        <% Lyrics.lyrics.forEach((lyricObj) => { %>
+            <div class="chord-line">
+                <% 
+                    let chordLine = ''; 
+                    let lastPosition = 0; 
+
+                    // Ensure chords exist and are structured correctly
+                    if (lyricObj.chords && Array.isArray(lyricObj.chords)) {
+                        lyricObj.chords.forEach((chord) => {
+                            // Validate chord structure
+                            if (chord.text && typeof chord.position === 'number') {
+                                const spacesToAdd = Math.max(chord.position - lastPosition, 0);
+                                chordLine += '&nbsp;'.repeat(spacesToAdd) + chord.text; 
+                                lastPosition = chord.position + chord.text.length; // Update position after each chord
+                            }
+                        }); 
+                    }
+                %>
+                <%- chordLine %> <!-- Render the chord line as HTML -->
+            </div>
+            <div class="lyric-line"><%= lyricObj.line %></div>
+        <% }); %>
+    </div>
+    <button id="StartA">Start</button>
+
+    <script src="home.js"></script> 
+</body>
+</html>

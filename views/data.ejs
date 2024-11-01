@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMusician</title>
+</head>
+<body>
+    <center><h1>Welcome To AutoMusician</h1></center>
+
+    <h1>Upload an Audio File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="title">Audio Title:</label>
+        <input type="text" name="title" id="title" required><br>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description"><br>
+
+        <label for="audio">Choose Audio File:</label>
+        <input type="file" name="audio" id="audio" accept="audio/*" required><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+</body>
+</html>
