@@ -44,5 +44,8 @@ router.get('/',(req,res)=>{
 router.get('/data',(req,res)=>{
     res.render('data')
 })
+router.get('/trial',(req,res)=>{
+    res.render('trial')
+})
 
 module.exports = router

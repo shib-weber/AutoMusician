@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+            height: 100vh;
+        }
+        
+        body a {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0%;
+            height: 100vh !important;
+            z-index: -1;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="app">
+        <div id="hero">
+            <h1>SRC</h1>
+        </div>
+    </div>
+    <script type="module" src="trial.js"></script>
+</body>
+</html>
